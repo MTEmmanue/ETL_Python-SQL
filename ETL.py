@@ -4,8 +4,8 @@ import urllib
 import sys
 
 # --- CONFIGURACIÓN ---
-SERVER = r'LENOVO_EMM2024\SQLEXPRESS'
-DATABASE = 'Videojuegos'
+SERVER = 'localhost\\SQLEXPRESS'  # Ajusta según tu configuración
+DATABASE = 'NombreBaseDeDatos'
 
 def get_db_connection():
     try:
@@ -27,7 +27,7 @@ def get_db_connection():
 def extract():
     print("--- 1. Iniciando Extracción ---")
     # Ajusta las rutas de los archivos 
-    base_path = 'C:/Users/Emmanuel/Documents/Proyecto_DataAnalytics_Juegos_ScoolData/Data/'
+    base_path = ''  # Si los CSV están en el mismo directorio, dejar vacío
     
     df_juegos = pd.read_csv(base_path + 'juegos.csv', encoding='latin-1')
     df_jugadores = pd.read_csv(base_path + 'jugadores.csv', encoding='latin-1')
